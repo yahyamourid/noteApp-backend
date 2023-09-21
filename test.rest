@@ -1,0 +1,62 @@
+POST http://localhost:3001/users/auth
+Content-Type: application/json
+
+{
+    "email" : "imourid2@gmail.com",
+    "password" : "Ibrahim1234#"
+}
+###
+GET http://localhost:3001/users/65077292ed2d278998162c46
+###
+PUT  http://localhost:3001/users/65077292ed2d278998162c46
+Content-Type: application/json
+
+{
+    "email" : "ymourid@gmail.com",
+    "firstName" : "Yahya1",
+    "lastName" : "Mourid"
+}
+
+###
+PUT  http://localhost:3001/users/pwd/65077292ed2d278998162c46
+Content-Type: application/json
+
+{
+    "email" : "ymourid@gmail.com",
+    "firstName" : "Yahya",
+    "lastName" : "Mourid",
+    "password" : "Yahy1234$",
+    "newPassword" : "Yahya1234$"
+}
+###
+DELETE http://localhost:3001/users/
+Content-Type: application/json
+
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDk5ZjM3YTI5NGFlNWRkYzQxNTUzZSIsImlhdCI6MTY5NTEyOTQyMiwiZXhwIjoxNjk1NzM0MjIyfQ.PaO5gevgF5Imo7B8IhFAg0yWgaCMfkoJ0s-d6DxDEk0"
+}
+###
+POST http://localhost:3001/users/
+Content-Type: application/json
+
+{
+    "email" : "imourid2@gmail.com",
+    "password" : "Ibrahim1234#",
+    "firstName" : "Ibrahim",
+    "lastName" : "Mourid"
+}
+
+###
+GET http://localhost:3001/notes/user/65077292ed2d278998162c56
+###
+POST http://localhost:3001/notes/
+Content-Type: application/json
+
+{  
+"title": "note4",
+"content": "4",
+"idUser" : "65077292ed2d278998162c56"
+}
+
+### 
+DELETE http://localhost:3001/notes/6508a7d7d220e29eb50cc4f1
