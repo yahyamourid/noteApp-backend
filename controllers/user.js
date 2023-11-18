@@ -70,7 +70,7 @@ router.get('/:id', getUser, (req,res) => {
 router.put('/:id', getUser, async (req, res) => {
     try {
        res.user.firstName = req.body.firstName
-       res.user.lastNAme = req.body.lastNAme
+       res.user.lastNAme = req.body.lastName
        const updatedUser = await res.user.save()
        res.status(201).json(updatedUser)
     } catch (error) {
@@ -113,7 +113,7 @@ const decodeToken = jwt.verify(token, process.env.TOKENKEY);
         const user = await User.findById(idUser)
         if(!user)
             return res.status(404).json({"message":"user does not exist"})
-        await User.deleteOne()
+        await User.deleteOne(user)
         res.status(201).json({"message": "User deleted successfully"})
         
     } catch (error) {
