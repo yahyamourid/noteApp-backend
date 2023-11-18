@@ -70,7 +70,7 @@ router.get('/:id', getUser, (req,res) => {
 router.put('/:id', getUser, async (req, res) => {
     try {
        res.user.firstName = req.body.firstName
-       res.user.lastNAme = req.body.lastName
+       res.user.lastName = req.body.lastName
        const updatedUser = await res.user.save()
        res.status(201).json(updatedUser)
     } catch (error) {
